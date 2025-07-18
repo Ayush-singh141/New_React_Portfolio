@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiMail, FiUser, FiMessageSquare, FiSend, FiGithub, FiTwitter, FiLinkedin } from 'react-icons/fi';
-
+import axios from 'axios';
 const ContactMeSection = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -24,13 +24,17 @@ const ContactMeSection = () => {
     setIsSubmitting(true);
     
     try {
-      // Replace with your actual email submission logic
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
+        const response = await axios.post('https://send-email-api-c1go.onrender.com/send-email', {
+          senderName: formData.name,
+          fromEmail: formData.email,
+          toEmail: 'ayushsinghgaur.works@gmail.com',
+          text: formData.message
+        });
+    
+        setSubmitStatus('success');
+      } catch (error) {
+        setSubmitStatus('error');
+      } finally {
       setIsSubmitting(false);
       setTimeout(() => setSubmitStatus(null), 5000);
     }
