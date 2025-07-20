@@ -18,7 +18,7 @@ const Navbar = () => {
     { name: 'About Me', href: '#about' ,id:"about"},
     { name: 'Portfolio', href: '#portfolio' ,id:"portfolio"},
     { name: 'Services', href: '#services' ,id:"services"},
-    { name: 'Blog', href: 'https://ayushsinghezyblogs.blogspot.com/' },
+    { name: 'Blog', href: 'https://ezy-blogs-ai-frontend.vercel.app/' },
   ];
 
   // Stagger animation variants

@@ -1,6 +1,12 @@
-import React, { useRef } from 'react';
-import { motion, useAnimation, useInView } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiTwitter, FiMail, FiArrowUp } from 'react-icons/fi';
+import React, { useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+import {
+  FiGithub,
+  FiLinkedin,
+  FiTwitter,
+  FiMail,
+  FiArrowUp,
+} from "react-icons/fi";
 
 const Footer = () => {
   const footerRef = useRef(null);
@@ -10,15 +16,27 @@ const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
   const socialLinks = [
-    { icon: <FiGithub />, url: "https://github.com/Ayush-singh141", label: "GitHub" },
-    { icon: <FiLinkedin />, url: "https://www.linkedin.com/in/ayush-singh-a619622a9/", label: "LinkedIn" },
-    { icon: <FiTwitter />, url: "https://x.com/BATTLEPRIM39865", label: "Twitter" },
-    { icon: <FiMail />, url: "ayushsinghgaur.works@gmail.com", label: "Email" }
+    {
+      icon: <FiGithub />,
+      url: "https://github.com/Ayush-singh141",
+      label: "GitHub",
+    },
+    {
+      icon: <FiLinkedin />,
+      url: "https://www.linkedin.com/in/ayush-singh-a619622a9/",
+      label: "LinkedIn",
+    },
+    {
+      icon: <FiTwitter />,
+      url: "https://x.com/BATTLEPRIM39865",
+      label: "Twitter",
+    },
+    { icon: <FiMail />, url: "ayushsinghgaur.works@gmail.com", label: "Email" },
   ];
 
   const containerVariants = {
@@ -27,9 +45,9 @@ const Footer = () => {
       opacity: 1,
       transition: {
         when: "beforeChildren",
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const itemVariants = {
@@ -39,9 +57,9 @@ const Footer = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const socialLinkVariants = {
@@ -52,9 +70,9 @@ const Footer = () => {
       transition: {
         delay: 0.3 + i * 0.1,
         duration: 0.6,
-        ease: "easeOut"
-      }
-    })
+        ease: "easeOut",
+      },
+    }),
   };
 
   const copyrightVariants = {
@@ -65,9 +83,9 @@ const Footer = () => {
       transition: {
         delay: 0.6,
         duration: 0.8,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const backToTopVariants = {
@@ -78,28 +96,32 @@ const Footer = () => {
       transition: {
         delay: 0.9,
         duration: 0.8,
-        ease: [0.17, 0.67, 0.83, 0.67]
-      }
-    }
+        ease: [0.17, 0.67, 0.83, 0.67],
+      },
+    },
   };
 
   return (
-    <footer 
+    <footer
       ref={footerRef}
       className="bg-[#111111] text-white py-12 px-6 sm:px-8 relative overflow-hidden"
-      style={{ minHeight: '400px' }}
+      style={{ minHeight: "400px" }}
     >
-      <motion.div 
+      <motion.div
         className="max-w-7xl mx-auto"
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         variants={containerVariants}
       >
-        <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <motion.div
+          variants={itemVariants}
+          className="grid grid-cols-1 md:grid-cols-12 gap-8"
+        >
           {/* Left section */}
           <div className="md:col-span-5 lg:col-span-6">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-              Let's Build Something <span className="text-[#7b7b7b]">Amazing</span>
+              Let's Build Something{" "}
+              <span className="text-[#7b7b7b]">Amazing</span>
             </h2>
             <p className="text-[#7b7b7b] text-sm sm:text-base max-w-md">
               I'm always open to discussing new projects and opportunities.
@@ -114,17 +136,22 @@ const Footer = () => {
                   Navigation
                 </h3>
                 <ul className="space-y-2">
-                  {['Home', 'Projects', 'About', 'Contact'].map((item, index) => (
-                    <motion.li 
-                      key={index}
-                      variants={itemVariants}
-                      custom={index}
-                    >
-                      <a href={`#${item.toLowerCase()}`} className="text-white hover:text-[#7b7b7b] transition-colors duration-200 text-sm sm:text-base">
-                        {item}
-                      </a>
-                    </motion.li>
-                  ))}
+                  {["Home", "Projects", "About", "Contact"].map(
+                    (item, index) => (
+                      <motion.li
+                        key={index}
+                        variants={itemVariants}
+                        custom={index}
+                      >
+                        <a
+                          href={`#${item.toLowerCase()}`}
+                          className="text-white hover:text-[#7b7b7b] transition-colors duration-200 text-sm sm:text-base"
+                        >
+                          {item}
+                        </a>
+                      </motion.li>
+                    )
+                  )}
                 </ul>
               </div>
 
@@ -133,15 +160,27 @@ const Footer = () => {
                   Resources
                 </h3>
                 <ul className="space-y-2">
-                  {['Blog', 'Tutorials', 'GitHub'].map((item, index) => (
-                    <motion.li 
+                  {["Blog", "Tutorials", "GitHub"].map((item, index) => (
+                    <motion.li
                       key={index}
                       variants={itemVariants}
                       custom={index + 4}
                     >
-                      <a href="#" className="text-white hover:text-[#7b7b7b] transition-colors duration-200 text-sm sm:text-base">
-                        {item}
-                      </a>
+                      {item === "Blog" ? (
+                        <a
+                          href="https://ezy-blogs-ai-frontend.vercel.app/"
+                          className="text-white hover:text-[#7b7b7b] transition-colors duration-200 text-sm sm:text-base"
+                        >
+                          {item}
+                        </a>
+                      ) : (
+                        <a
+                          href="#"
+                          className="text-white hover:text-[#7b7b7b] transition-colors duration-200 text-sm sm:text-base"
+                        >
+                          {item}
+                        </a>
+                      )}
                     </motion.li>
                   ))}
                 </ul>
@@ -153,8 +192,11 @@ const Footer = () => {
                 </h3>
                 <ul className="space-y-2">
                   <motion.li variants={itemVariants} custom={7}>
-                    <a href="mailto:ayushsinghgaur.works@gmail.com" className="text-white hover:text-teal-300 transition-colors duration-200 text-sm sm:text-base break-words">
-                    ayushsinghgaur.works@gmail.com
+                    <a
+                      href="mailto:ayushsinghgaur.works@gmail.com"
+                      className="text-white hover:text-teal-300 transition-colors duration-200 text-sm sm:text-base break-words"
+                    >
+                      ayushsinghgaur.works@gmail.com
                     </a>
                   </motion.li>
                 </ul>
@@ -184,7 +226,7 @@ const Footer = () => {
         </motion.div>
 
         {/* Copyright */}
-        <motion.div 
+        <motion.div
           className="mt-8 text-center text-[#7b7b7b] text-xs sm:text-sm"
           variants={copyrightVariants}
         >
