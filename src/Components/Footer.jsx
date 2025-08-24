@@ -230,7 +230,7 @@ const Footer = () => {
           className="mt-8 text-center text-[#7b7b7b] text-xs sm:text-sm"
           variants={copyrightVariants}
         >
-          <p>© {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Ayush Singh. All rights reserved.</p>
           <p className="mt-1">Built with React and Tailwind CSS</p>
         </motion.div>
       </motion.div>
